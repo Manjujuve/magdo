@@ -15,15 +15,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MagentoBaseclass {
 	
 public static WebDriver driver;
+
 	
 	public static void url(WebDriver driver, String s) {
 		driver.get(s);
 	}
-	public static void maximize() {
+	public static void maximize(WebDriver driver) {
 		driver.manage().window().maximize();
 	}
 	public static void toClick(WebElement e) {
@@ -66,6 +69,17 @@ public static WebDriver driver;
 		JavascriptExecutor j = (JavascriptExecutor) driver;
 		j.executeScript("arguments[0].scrollIntoView()", scroll);
 	}
+	
+	public static void Scroll(WebElement srl) {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].scrollIntoView()", srl);
+	}
+	
+	 public static void Scroll(WebDriver driver, WebElement srl) {
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        js.executeScript("arguments[0].scrollIntoView()", srl);
+	    }
+	
 	public static void robotClass(int v) throws AWTException {
 		Robot r = new Robot();
 		r.keyPress(v);
@@ -76,13 +90,12 @@ public static WebDriver driver;
 		drop.selectByIndex(c);
 		
 	}
-	public static void toSelect( WebElement q, String v) {
+	public static void toSelectText( WebElement q, String v) {
 		Select drop = new Select(q);
 		drop.selectByVisibleText(v);
 		
 	}
 	
-
 	
 
 }

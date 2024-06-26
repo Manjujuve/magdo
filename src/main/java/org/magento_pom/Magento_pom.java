@@ -36,16 +36,41 @@ public class Magento_pom {
 	
 	
 	public By qty = By.xpath("//input[@id='qty']");
+	public By cart = By.xpath("//span[text()='Add to Cart']");
+	//public By showcart = By.xpath("//a[@class='action showcart']");
+	//public By shopcart = By.xpath("//a[text()='shopping cart']");
+	
+	 public By shoppingcart = By.xpath("//span[@data-bind=\"css: { empty: !!getCartParam('summary_count') == false && !isLoading() }, blockLoader: isLoading\"]");
+	 public By edititem = By.xpath("//a[@title='Edit item']");
+	 public By sizchng = By.xpath("//div[@id='option-label-size-143-item-168']");
+	 public By colorchng = By.xpath("//div[@id='option-label-color-93-item-56']");
+	 public By update = By.xpath("//button[@id='product-updatecart-button']");
+	 public By shipping = By.xpath("//strong[@id='block-shipping-heading']");
+	// public By cty = By.xpath("//select[@id='WEBKKKR']");
+	//@FindBy(xpath="//select[@name='country_id']")
+	//private WebElement cty;
+	 public By ctry = By.xpath("//fieldset[contains(@class,'fieldset estimate')]//select[@name='country_id']");
+	public By scty = By.xpath("//option[@value='IN']");
+	
+	public By mentab = By.xpath("//span[text()='Men']");
+	
+	public By jckt = By.xpath("//a[text()='Jackets']");
+	
+	public By jcktname = By.xpath("(//a[@class='product-item-link'])[1]");
+	
+	public By compar = By.xpath("(//span[text()='Add to Compare'])[1]");
+
+	public By clist = By.xpath("//a[text()='comparison list']");
+	
+	public By print = By.xpath("//span[text()='Print This Page']");
 	
 	
 	
 	
 	
-	
-	
-	
-	
-	
+	//public WebElement getCty() {
+	///	return cty;
+	//}
 	public WebElement getWomen() {
 		return women;
 	}
